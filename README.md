@@ -15,8 +15,52 @@ To write a program to prepare EMI calculator using function without return type 
 
 ## PROGRAM
 
+    #include <stdio.h>
+    #include <math.h>
+
+   
+    void calculateEMI(double principal, double rate, int tenure) {
+   
+    double monthlyRate = rate / (12 * 100);
+
+    
+    double emi = (principal * monthlyRate * pow(1 + monthlyRate, tenure)) / (pow(1 + monthlyRate, tenure) - 1);
+
+    printf("EMI for Principal=%.2lf, Rate=%.2lf%%, Tenure=%d months is: %.2lf\n", principal, rate, tenure, emi);
+    }
+
+    int main() {
+    double principal, rate;
+    int tenure;
+
+    
+    printf("Enter loan amount (principal): ");
+    scanf("%lf", &principal);
+
+    printf("Enter annual interest rate (in %%): ");
+    scanf("%lf", &rate);
+
+    printf("Enter tenure (in months): ");
+    scanf("%d", &tenure);
+
+    
+    calculateEMI(principal, rate, tenure);
+
+    return 0;
+    }
+
+
 
 ## OUTPUT
+
+    Enter loan amount (principal): 100000
+    Enter annual interest rate (in %): 10
+    Enter tenure (in months): 12
+    EMI for Principal=100000.00, Rate=10.00%, Tenure=12 months is: 8791.59
+
+## NAME: Vishnu Rathan B
+
+## REG NO:212224240185
 
 
 
@@ -44,11 +88,36 @@ To write a C program to generate the Fibonacci series for the value 6.
 
 ## PROGRAM
 
+    #include <stdio.h>
+
+    int main() {
+    int n = 6; // Number of terms
+    int first = 0, second = 1, next;
+
+    printf("Fibonacci Series for %d terms:\n", n);
+
+    for (int i = 1; i <= n; i++) {
+        printf("%d ", first);
+
+        next = first + second;
+        first = second;
+        second = next;
+    }
+
+    printf("\n");
+
+    return 0;
+    }
+
+
 ## OUTPUT
 
+    Fibonacci Series for 6 terms:
+    0 1 1 2 3 5 
 
+## NAME: Vishnu Rathan B
 
-
+## REG NO:212224240185
 
 
 
@@ -72,10 +141,41 @@ To write a C program to read n elements as input and print the last element of t
 
 ## PROGRAM
 
+    #include <stdio.h>
+
+    int main() {
+    int n, i;
+    
+    
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    int arr[n]; // Declaring array of size n
+
+    
+    printf("Enter %d elements:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+   
+    printf("The last element is: %d\n", arr[n-1]);
+
+    return 0;
+    }
+
+
 ## OUTPUT
 
+    Enter number of elements: 5
+    Enter 5 elements:
+    10 20 30 40 50
+    The last element is: 50
 
 
+## NAME: Vishnu Rathan B
+
+## REG NO:212224240185
 
 
 
@@ -102,8 +202,45 @@ To write a C Program to count total number of positive elements in an array.
 
 ## PROGRAM
 
+    #include <stdio.h>
+
+    int main() {
+    int n, i, count = 0;
+
+    
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    int arr[n]; // Declaring array
+
+    printf("Enter %d elements:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    
+    for (i = 0; i < n; i++) {
+        if (arr[i] > 0) {
+            count++;
+        }
+    }
+
+    
+    printf("Total number of positive elements = %d
+
+
 
 ## OUTPUT
+
+    Enter number of elements: 6
+    Enter 6 elements:
+    -5 3 0 7 -2 9
+    Total number of positive elements = 3
+
+## NAME: Vishnu Rathan B
+
+## REG NO:212224240185
+
 
 
 
@@ -138,7 +275,52 @@ To write a C program to replace all even elements with 'E' in one dimensional ar
 
 ## Program:
 
+    #include <stdio.h>
+
+    int main() {
+    int n, i;
+
+    
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    int arr[n]; // Declaring array
+
+    
+    printf("Enter %d elements:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    /
+    printf("Array after replacing even elements with 'E':\n");
+    for (i = 0; i < n; i++) {
+        if (arr[i] % 2 == 0) {
+            printf("E ");
+        } else {
+            printf("%d ", arr[i]);
+        }
+    }
+
+    printf("\n");
+
+    return 0;
+    }
+
+
 ## Output:
+
+    Enter number of elements: 6
+    Enter 6 elements:
+    4 7 8 5 6 11
+
+    Array after replacing even elements with 'E':
+    E 7 E 5 E 11
+
+
+## NAME: Vishnu Rathan B
+
+## REG NO:212224240185
  
 
 
